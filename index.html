@@ -27,7 +27,19 @@
     /* Mantener proporciones naturales del logo en todas las pantallas */
     .hero-art{width:100%;min-width:0}
     .hero-art img{max-width:100%;height:auto!important;min-height:0;object-position:center}
-  </style>
+  
+    /* Hero equilibrado: logotipo grande, centrado y sin deformaciones */
+    @media (min-width: 851px) {
+      .hero-grid {grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(20px, 3vw, 48px); align-items: center;}
+      .hero-grid > div:first-child {min-width: 0;}
+      .hero-art {width: 110%; max-width: none; justify-self: center; transform: translateY(-8px);}
+      .hero-art img {width: 100%; height: auto !important; aspect-ratio: 1774 / 887; object-fit: contain;}
+    }
+    @media (max-width: 850px) {
+      .hero-art {width: 100%; max-width: 680px; transform: none; margin: 24px auto 0;}
+      .hero-art img {width: 100%; height: auto !important; object-fit: contain;}
+    }
+</style>
 </head>
 <body>
 <header><nav class="nav container" aria-label="Navegación principal"><a class="brand" href="#inicio" aria-label="DevDarkSoft inicio">dev<span>darksoft</span><span style="color:#56e5e0">.</span></a><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">☰</button><div class="nav-links" id="navLinks"><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajo</a><a href="#experiencia">Experiencia</a><a href="#tecnologias">Tecnologías</a><a href="#sobre-mi">Sobre mí</a><a class="nav-cta" href="#contacto">Hablemos ↗</a></div></nav></header>
