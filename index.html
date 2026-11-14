@@ -1,64 +1,929 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#070d18" />
-  <meta name="description" content="DevDarkSoft: desarrollador full stack especializado en C#, .NET, Vue, Quasar, SQL Server, APIs, sistemas empresariales e integraciones. Solicita una cotización." />
-  <meta property="og:title" content="DevDarkSoft | Full Stack .NET, Vue y SQL Server" />
-  <meta property="og:description" content="Sitios web modernos, sistemas personalizados e integraciones para impulsar tu negocio." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/devdarksoft-logo.png" />
-  <title>DevDarkSoft | Desarrollador Full Stack .NET, Vue y SQL Server</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root{color-scheme:dark;--bg:#070d18;--surface:#0e1929;--surface2:#101f32;--line:#24344a;--text:#eef7ff;--muted:#9eb1c7;--blue:#398bff;--cyan:#36e4e3;--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:#29c8d9;color:#06111d}
-    .container{width:min(var(--max),calc(100% - 40px));margin:auto}.glow{position:absolute;pointer-events:none;filter:blur(100px);opacity:.22;border-radius:50%}.top-glow{width:400px;height:400px;background:#147fff;top:30px;left:-160px}.right-glow{width:400px;height:400px;background:#00b5b6;top:190px;right:-200px}
-    header{position:sticky;top:0;z-index:20;background:rgba(7,13,24,.84);backdrop-filter:blur(18px);border-bottom:1px solid rgba(119,162,210,.13)}.nav{height:75px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.34rem;letter-spacing:-.05em}.brand span{color:var(--cyan)}.nav-links{display:flex;align-items:center;gap:30px;font-size:.93rem;color:#c2d1e0}.nav-links a:hover,.footer-links a:hover{color:var(--cyan)}.nav-cta{border:1px solid #398bff70;padding:9px 16px;border-radius:10px;color:#e8f6ff!important}.nav-cta:hover{background:#398bff20}.menu-toggle{display:none;background:none;color:white;border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer}
-    .hero{position:relative;isolation:isolate;padding:95px 0 94px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #2b5674;background:#0c2333;padding:6px 13px;border-radius:100px;color:#93e6f4;font-size:.81rem;font-weight:700;letter-spacing:.045em}.dot{width:7px;height:7px;background:#42e8c6;border-radius:50%;box-shadow:0 0 10px #42e8c6}.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,5.3vw,5.15rem);letter-spacing:-.065em;line-height:1.08;margin:25px 0 23px}.gradient{background:linear-gradient(100deg,#5d9eff,#49e9e0);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:1.09rem;max-width:580px;margin-bottom:30px}.actions{display:flex;flex-wrap:wrap;gap:13px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:13px 21px;font-weight:700;font-size:.94rem;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent}.btn:hover{transform:translateY(-3px)}.btn-primary{background:linear-gradient(110deg,#3483ff,#1ecac9);color:#061322;box-shadow:0 12px 35px #188fe32e}.btn-primary:hover{box-shadow:0 16px 42px #18bde05c}.btn-outline{border-color:#41546c;background:#101d2d}.btn-outline:hover{background:#1b3046}.hero-note{font-size:.83rem!important;color:#8196ac!important;margin-top:20px!important}.hero-art{position:relative}.hero-art::before{content:'';position:absolute;inset:8%;background:linear-gradient(125deg,#1377ff33,#00e5c133);filter:blur(60px);z-index:-1}.hero-art img{width:100%;height:auto;max-height:none;aspect-ratio:1774 / 887;object-fit:contain;display:block;border-radius:20px;box-shadow:0 20px 90px #0008;border:1px solid #1c40504d}.art-tag{position:absolute;bottom:-17px;left:7%;border:1px solid #2d6078;background:#0b1a2df0;padding:11px 17px;border-radius:12px;font-size:.84rem;color:#b8eefa;box-shadow:0 10px 30px #0008}
-    section{padding:90px 0}.section-head{max-width:710px;margin-bottom:36px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;font-size:.79rem;font-weight:800}.section-head h2,.contact-copy h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.17;letter-spacing:-.045em;margin:12px 0 15px}.section-head p,.contact-copy p{color:var(--muted);margin:0}.services{background:linear-gradient(180deg,#0a1321,#0b1626)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);background:linear-gradient(155deg,#142438,#0d1828);padding:28px;border-radius:19px;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-5px);border-color:#37b9d37d}.card-icon{width:49px;height:49px;display:grid;place-items:center;border-radius:13px;background:#173951;color:#66d9fa;font-size:1.4rem;margin-bottom:20px}.card h3{font-family:'Space Grotesk',sans-serif;font-size:1.24rem;margin:0 0 9px}.card p{color:var(--muted);font-size:.94rem;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{border-top:1px solid #2e516b;padding:24px 10px}.step b{color:var(--cyan);font-family:'Space Grotesk',sans-serif;font-size:1.4rem}.step h3{margin:12px 0 6px;font-size:1.12rem}.step p{color:var(--muted);margin:0;font-size:.94rem}.tech{background:#0a1422}.chips{display:flex;flex-wrap:wrap;gap:11px}.chip{border:1px solid #2c455e;background:#101f32;border-radius:100px;padding:10px 17px;color:#c9e5f4;font-size:.9rem}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.about-panel{border:1px solid #28465b;border-radius:20px;padding:30px;background:radial-gradient(circle at top right,#0d546044,transparent 60%),#101e30}.about-panel .code{font-family:monospace;font-size:.88rem;line-height:2;color:#d5e9ff}.code .key{color:#74b5ff}.code .value{color:#64ead6}.code .comment{color:#718da4}.about-copy p{color:var(--muted)}.contact{background:linear-gradient(145deg,#0c1b30,#08121e)}.contact-box{border:1px solid #2d5a72;border-radius:24px;background:radial-gradient(circle at 95% 10%,#0b6c7b38,transparent 50%),#101f31;padding:48px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}.contact-actions{display:flex;flex-direction:column;gap:12px;min-width:220px}.contact-email{display:inline-block;margin-top:20px;color:#79dbe9;overflow-wrap:anywhere}.contact-email:hover{text-decoration:underline}footer{border-top:1px solid #24344a;padding:26px 0;color:#8399af;font-size:.86rem}.footer-content{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-links{display:flex;gap:20px}.whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:30;background:#1acb8a;color:#062016;border-radius:50px;padding:13px 18px;font-weight:800;box-shadow:0 8px 30px #0cc98755}.whatsapp-float:hover{background:#4aefad}
-    @media(max-width:850px){.hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding-top:65px}.hero-art{max-width:620px;margin:auto}.cards{grid-template-columns:repeat(2,1fr)}.contact-box{grid-template-columns:1fr}.contact-actions{flex-direction:row;flex-wrap:wrap}.contact-actions .btn{flex:1}.steps{gap:10px}}@media(max-width:600px){.container{width:min(var(--max),calc(100% - 32px))}.nav{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:68px;background:#0b1625;padding:22px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.nav-links.open{display:flex}.hero{padding:48px 0 75px}.hero h1{font-size:2.8rem}.hero p{font-size:1rem}.hero-art{margin-top:15px}.art-tag{font-size:.72rem}.cards,.steps{grid-template-columns:1fr}section{padding:68px 0}.contact-box{padding:27px 20px}.contact-actions{flex-direction:column}.footer-content{flex-direction:column;align-items:flex-start}.whatsapp-float{right:15px;bottom:15px;padding:11px 14px;font-size:.85rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}}
-  .experience{background:linear-gradient(180deg,#091421,#0a1828)}.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.case{position:relative;overflow:hidden;border:1px solid #284258;border-radius:20px;background:linear-gradient(145deg,#14263b,#0c1929);padding:30px;transition:transform .25s,border-color .25s}.case:hover{transform:translateY(-4px);border-color:#36d6e388}.case-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.case-number{font-size:.75rem;color:#72d9e9;letter-spacing:.12em;font-weight:800}.case-icon{font-size:2rem;color:#54d8e7}.case h3{font-family:'Space Grotesk',sans-serif;font-size:1.45rem;line-height:1.25;margin:18px 0 12px}.case p{color:var(--muted);margin:0 0 20px}.tags{display:flex;flex-wrap:wrap;gap:8px}.tags span{border:1px solid #31516b;border-radius:7px;padding:5px 9px;color:#b5dff1;font-size:.76rem;background:#10283b}.case-disclaimer{color:#7e99ac;font-size:.82rem;margin-top:18px}.stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.stack-panel{background:#101e30;border:1px solid #263e54;border-radius:18px;padding:25px}.stack-panel h3{font-family:'Space Grotesk',sans-serif;margin:0 0 18px;font-size:1.16rem}@media(max-width:700px){.cases,.stack-grid{grid-template-columns:1fr}.case,.stack-panel{padding:22px}}:focus-visible{outline:2px solid #4ee7df;outline-offset:4px}
-    /* Mantener proporciones naturales del logo en todas las pantallas */
-    .hero-art{width:100%;min-width:0}
-    .hero-art img{max-width:100%;height:auto!important;min-height:0;object-position:center}
-  
-    /* Hero equilibrado: logotipo grande, centrado y sin deformaciones */
-    @media (min-width: 851px) {
-      .hero-grid {grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(20px, 3vw, 48px); align-items: center;}
-      .hero-grid > div:first-child {min-width: 0;}
-      .hero-art {width: 110%; max-width: none; justify-self: center; transform: translateY(-8px);}
-      .hero-art img {width: 100%; height: auto !important; aspect-ratio: 1774 / 887; object-fit: contain;}
-    }
-    @media (max-width: 850px) {
-      .hero-art {width: 100%; max-width: 680px; transform: none; margin: 24px auto 0;}
-      .hero-art img {width: 100%; height: auto !important; object-fit: contain;}
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devdarksoft | Arquitectura de Software, Backend .NET & Apps Multiplataforma</title>
+    <meta name="description" content="Desarrollo de software empresarial de alto rendimiento, APIs RESTful en .NET Core, sistemas SQL Server y aplicaciones multiplataforma con Vue 3 y Quasar.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Space Grotesk (Títulos Tecnológicos) & Plus Jakarta Sans (Lectura) & JetBrains Mono (Código) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Iconografía -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        darkbg: '#05080F',
+                        darkcard: '#0B0F1A',
+                        darksurface: '#0D1322',
+                        neoncyan: '#00D4FF',
+                        neonturquoise: '#00FFD1',
+                        electricblue: '#0066FF',
+                        deepblue: '#0E4BFF',
+                        silvertext: '#B0C4DE'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #05080F;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Fondo de cuadrícula cibernética sutil */
+        .cyber-grid {
+            background-size: 45px 45px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
+        }
+
+        /* Efecto Glassmorphism Oscuro con borde luminoso */
+        .glass-card {
+            background: rgba(13, 19, 34, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(0, 212, 255, 0.16);
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 255, 209, 0.55);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.14), inset 0 0 18px rgba(0, 102, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        /* Gradiente de texto neón */
+        .text-gradient-neon {
+            background: linear-gradient(135deg, #FFFFFF 15%, #00D4FF 55%, #00FFD1 95%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(90deg, #0066FF 0%, #00D4FF 50%, #00FFD1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Botón principal con brillo neón */
+        .btn-neon-primary {
+            background: linear-gradient(135deg, #0066FF 0%, #00B8FF 100%);
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon-primary:hover {
+            background: linear-gradient(135deg, #0E4BFF 0%, #00FFD1 100%);
+            box-shadow: 0 6px 28px rgba(0, 212, 255, 0.55);
+            transform: translateY(-2px);
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05080F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0E4BFF;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00D4FF;
+        }
+    </style>
 </head>
-<body>
-<header><nav class="nav container" aria-label="Navegación principal"><a class="brand" href="#inicio" aria-label="DevDarkSoft inicio">dev<span>darksoft</span><span style="color:#56e5e0">.</span></a><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">☰</button><div class="nav-links" id="navLinks"><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajo</a><a href="#experiencia">Experiencia</a><a href="#tecnologias">Tecnologías</a><a href="#sobre-mi">Sobre mí</a><a class="nav-cta" href="#contacto">Hablemos ↗</a></div></nav></header>
-<main>
-<section class="hero" id="inicio"><div class="glow top-glow"></div><div class="glow right-glow"></div><div class="container hero-grid"><div><span class="eyebrow"><span class="dot"></span> DESARROLLO WEB & BACKEND</span><h1>Software que impulsa negocios. <span class="gradient">Ingeniería que resuelve.</span></h1><p>Soy desarrollador full stack especializado en C#, .NET, SQL Server y Vue/Quasar. Diseño sistemas empresariales, APIs, integraciones y automatizaciones para resolver retos reales de operación.</p><div class="actions"><a class="btn btn-primary" href="https://wa.me/523531118411?text=Hola%20DevDarkSoft%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer">✦ Cotiza tu proyecto ↗</a><a class="btn btn-outline" href="#servicios">Explorar servicios ↓</a></div><p class="hero-note">✓ Atención personalizada &nbsp; ✓ Soluciones a medida &nbsp; ✓ Contacto directo</p></div><div class="hero-art"><img src="assets/devdarksoft-logo.png" alt="Logotipo DevDarkSoft con dragón oscuro y detalles azules y turquesa" width="1774" height="887" fetchpriority="high"/><div class="art-tag">⚡ Ideas que se convierten en software</div></div></div></section>
-<section class="services" id="servicios"><div class="container"><div class="section-head"><span class="kicker">Qué puedo hacer por ti</span><h2>Soluciones digitales que trabajan para tu negocio.</h2><p>Experiencia en soluciones empresariales: desde interfaces intuitivas hasta servicios, bases de datos e integraciones complejas.</p></div><div class="cards"><article class="card"><div class="card-icon">⌘</div><h3>Páginas web profesionales</h3><p>Sitios corporativos, landing pages y experiencias adaptables a cualquier pantalla, diseñadas para presentar tu negocio y generar contactos.</p></article><article class="card"><div class="card-icon">{ }</div><h3>Desarrollo backend y APIs</h3><p>Lógica de negocio, servicios, APIs REST e integraciones para conectar aplicaciones y automatizar operaciones.</p></article><article class="card"><div class="card-icon">▦</div><h3>Sistemas a medida</h3><p>Paneles administrativos, plataformas internas y aplicaciones web que se ajustan a la manera en que trabajas.</p></article><article class="card"><div class="card-icon">⛁</div><h3>Bases de datos</h3><p>SQL Server y MySQL: procedimientos almacenados, mantenimiento, consultas, análisis de rendimiento y optimización.</p></article><article class="card"><div class="card-icon">⇄</div><h3>Integraciones y automatización</h3><p>Integraciones con telefonía Issabel/Asterisk, APIs externas, SMTP y procesos automatizados con .NET.</p></article><article class="card"><div class="card-icon">↗</div><h3>Mejoras y mantenimiento</h3><p>Modernización de aplicaciones ASP.NET, resolución de incidencias, despliegues IIS y soporte de sistemas heredados.</p></article></div></div></section>
-<section id="proceso"><div class="container"><div class="section-head"><span class="kicker">Proceso claro</span><h2>De la idea a una solución real.</h2><p>Un enfoque colaborativo, con comunicación directa y atención a lo que realmente necesitas.</p></div><div class="steps"><div class="step"><b>01 /</b><h3>Platicamos tu idea</h3><p>Conozco tu negocio, el problema que quieres resolver y los objetivos del proyecto.</p></div><div class="step"><b>02 /</b><h3>Definimos la solución</h3><p>Organizamos el alcance, las funciones prioritarias y una propuesta acorde a tus necesidades.</p></div><div class="step"><b>03 /</b><h3>Construimos y mejoramos</h3><p>Desarrollamos, revisamos y ajustamos para entregar una herramienta útil y fácil de utilizar.</p></div></div></div></section>
-<section class="experience" id="experiencia"><div class="container"><div class="section-head"><span class="kicker">Experiencia aplicada</span><h2>Retos técnicos en los que he trabajado.</h2><p>Una selección de áreas y proyectos abordados. Se describen capacidades técnicas sin atribuir resultados, clientes ni lanzamientos no verificados.</p></div><div class="cases">
-<article class="case"><div class="case-top"><span class="case-number">01 / SISTEMAS EMPRESARIALES</span><span class="case-icon">▦</span></div><h3>CRM, dashboards y control de acceso</h3><p>Diseño de plataformas administrativas con autenticación, perfiles, permisos, navegación dinámica, paneles y módulos de gestión.</p><div class="tags"><span>Quasar</span><span>Vue</span><span>.NET 8</span><span>SQL Server</span><span>JWT</span></div></article>
-<article class="case"><div class="case-top"><span class="case-number">02 / TELEFONÍA Y AUTOMATIZACIÓN</span><span class="case-icon">◉</span></div><h3>Motor de campañas de llamadas</h3><p>Trabajo técnico con aplicaciones de llamadas automatizadas, integración Issabel/Asterisk, carga de contactos desde Excel, eventos, resultados y reportes.</p><div class="tags"><span>C#</span><span>WinForms</span><span>Issabel / AMI</span><span>Dapper</span><span>SQL Server</span></div></article>
-<article class="case"><div class="case-top"><span class="case-number">03 / DATOS Y RENDIMIENTO</span><span class="case-icon">⛁</span></div><h3>Administración y optimización SQL Server</h3><p>Consultas, procedimientos, diagnóstico de cargas concurrentes, mantenimiento de bases de datos y estrategias de respaldos y registros de transacciones.</p><div class="tags"><span>SQL Server 2019</span><span>T-SQL</span><span>Performance</span><span>Backups</span></div></article>
-<article class="case"><div class="case-top"><span class="case-number">04 / INTEGRACIONES Y OPERACIÓN</span><span class="case-icon">⇄</span></div><h3>APIs, correo y despliegues</h3><p>Integraciones con servicios externos, diagnóstico de TLS/SMTP, publicación de sitios ASP.NET en IIS y resolución de incidencias en entornos Windows Server.</p><div class="tags"><span>ASP.NET</span><span>REST</span><span>SMTP / TLS</span><span>IIS</span><span>Windows Server</span></div></article>
-</div><p class="case-disclaimer">Los ejemplos describen trabajo técnico y áreas de experiencia; no constituyen testimonios ni casos de éxito con métricas verificadas.</p></div></section>
-<section class="tech" id="tecnologias"><div class="container"><div class="section-head"><span class="kicker">Mi stack tecnológico</span><h2>Herramientas para construir soluciones completas.</h2><p>Trabajo desde la interfaz hasta la base de datos, la integración y el despliegue.</p></div><div class="stack-grid"><div class="stack-panel"><h3>Backend & arquitectura</h3><div class="chips"><span class="chip">C#</span><span class="chip">.NET / ASP.NET</span><span class="chip">ASP.NET Core Web API</span><span class="chip">Dapper</span><span class="chip">REST</span><span class="chip">JWT</span><span class="chip">Servicios Windows</span></div></div><div class="stack-panel"><h3>Frontend & UX</h3><div class="chips"><span class="chip">Vue.js</span><span class="chip">Quasar</span><span class="chip">JavaScript</span><span class="chip">HTML5 / CSS3</span><span class="chip">Bootstrap</span><span class="chip">Pinia / Axios</span><span class="chip">Responsive UI</span></div></div><div class="stack-panel"><h3>Datos & reportes</h3><div class="chips"><span class="chip">SQL Server</span><span class="chip">T-SQL</span><span class="chip">MySQL</span><span class="chip">Stored Procedures</span><span class="chip">Optimización SQL</span><span class="chip">Dashboards</span></div></div><div class="stack-panel"><h3>Integración & operación</h3><div class="chips"><span class="chip">Issabel / Asterisk</span><span class="chip">SMTP / TLS</span><span class="chip">IIS</span><span class="chip">Windows Server</span><span class="chip">Git / GitHub</span><span class="chip">Visual Studio</span></div></div></div></div></section>
-<section id="sobre-mi"><div class="container about-grid"><div class="about-copy"><span class="kicker">Detrás del código</span><div class="section-head" style="margin-bottom:0"><h2>Detrás de <span class="gradient">DevDarkSoft.</span></h2></div><p>Soy desarrollador de software con enfoque full stack y especialización en ecosistemas .NET, bases de datos y aplicaciones empresariales. Me interesa tanto la experiencia de usuario como el rendimiento, la seguridad y la mantenibilidad del backend.</p><p>He trabajado en retos relacionados con CRM, telefonía, automatización, integraciones, sistemas heredados y optimización de SQL Server. Mi objetivo es convertir necesidades operativas en soluciones claras y útiles.</p><a class="btn btn-outline" href="https://github.com/devdarksoft" target="_blank" rel="noopener noreferrer">Ver mi GitHub ↗</a></div><div class="about-panel" aria-label="Ejemplo de código que representa el enfoque de DevDarkSoft"><div class="code"><span class="comment">// La tecnología al servicio de tus ideas</span><br>{<br>&nbsp; <span class="key">"desarrollador"</span>: <span class="value">"DevDarkSoft"</span>,<br>&nbsp; <span class="key">"especialidad"</span>: [<br>&nbsp;&nbsp;&nbsp; <span class="value">".NET"</span>, <span class="value">"Vue / Quasar"</span>, <span class="value">"SQL Server"</span><br>&nbsp; ],<br>&nbsp; <span class="key">"objetivo"</span>: <span class="value">"Resolver retos con software"</span><br>}</div></div></div></section>
-<section class="contact" id="contacto"><div class="container"><div class="contact-box"><div class="contact-copy"><span class="kicker">Tu proyecto comienza aquí</span><h2>¿Tienes una idea?<br><span class="gradient">Hagámosla realidad.</span></h2><p>Cuéntame qué necesitas. Podemos conversar sobre tu proyecto, resolver dudas y preparar una cotización.</p><a class="contact-email" href="mailto:devdarksoft@gmail.com?subject=Consulta%20de%20proyecto%20-%20DevDarkSoft">✉ devdarksoft@gmail.com</a></div><div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/523531118411?text=Hola%20DevDarkSoft%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios." target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a class="btn btn-outline" href="mailto:devdarksoft@gmail.com?subject=Quiero%20cotizar%20un%20proyecto">Enviar correo ↗</a><a class="btn btn-outline" href="https://github.com/devdarksoft" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div></section>
-</main>
-<footer><div class="container footer-content"><div>© <span id="year"></span> DevDarkSoft. Desarrollo web & backend.</div><div class="footer-links"><a href="#inicio">Volver arriba ↑</a><a href="https://github.com/devdarksoft" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:devdarksoft@gmail.com">Email</a></div></div></footer>
-<a class="whatsapp-float" href="https://wa.me/523531118411?text=Hola%20DevDarkSoft%2C%20me%20interesa%20un%20desarrollo." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">✆ WhatsApp</a>
-<script>document.getElementById('year').textContent=new Date().getFullYear();const toggle=document.getElementById('menuToggle');const links=document.getElementById('navLinks');toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'✕':'☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));</script>
+<body class="cyber-grid selection:bg-neoncyan selection:text-darkbg">
+
+    <!-- Notificación Toast Flotante (Para copiar correo y feedback sin usar alert) -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="glass-card px-5 py-3.5 rounded-xl border border-neonturquoise/60 shadow-2xl flex items-center gap-3 bg-[#081021]">
+            <div class="w-8 h-8 rounded-lg bg-neonturquoise/20 flex items-center justify-center text-neonturquoise">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <p id="toast-title" class="text-sm font-semibold text-white">¡Acción completada!</p>
+                <p id="toast-message" class="text-xs text-silvertext">Texto copiado al portapapeles.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resplandores ambientales de fondo -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-electricblue/15 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-1/4 w-[450px] h-[450px] bg-neoncyan/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+    <!-- ==================== 1. NAVBAR FIJA ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#05080F]/85 backdrop-blur-xl border-b border-neoncyan/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Marca y Logo devdarksoft -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <!-- Emblema SVG Dragón Cibernético Neón -->
+                    <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B152C] to-[#05080F] border border-neoncyan/40 flex items-center justify-center shadow-[0_0_15px_rgba(0,212,255,0.25)] group-hover:border-neonturquoise transition-all">
+                        <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="dragonGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#0066FF"/>
+                                    <stop offset="50%" stop-color="#00D4FF"/>
+                                    <stop offset="100%" stop-color="#00FFD1"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Silueta estilizada de cabeza/ala de dragón cibernético -->
+                            <path d="M12 44C12 30 22 18 38 14L32 22L48 18L39 28L52 28C46 35 38 38 28 38L34 46C24 47 16 46 12 44Z" fill="url(#dragonGrad)"/>
+                            <path d="M22 14L14 8L19 20" stroke="#00FFD1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="38" cy="23" r="2" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">
+                            dev<span class="text-gradient-blue">darksoft</span>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.22em] text-neoncyan/80 font-mono -mt-1">Software Architecture</span>
+                    </div>
+                </a>
+
+                <!-- Enlaces de navegación Desktop -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#servicios" class="text-sm font-medium text-silvertext hover:text-neoncyan transition-colors">Servicios</a>
+                    <a href="#stack" class="text-sm font-medium text-silvertext hover:text-neoncyan transition-colors">Stack Tecnológico</a>
+                    <a href="#soluciones" class="text-sm font-medium text-silvertext hover:text-neoncyan transition-colors">Ventajas</a>
+                    <a href="#contacto" class="text-sm font-medium text-silvertext hover:text-neoncyan transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Botón CTA Desktop & Menú Móvil -->
+                <div class="flex items-center gap-3">
+                    <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 btn-neon-primary text-white font-semibold text-sm px-5 py-2.5 rounded-xl">
+                        <i class="fa-solid fa-bolt text-neonturquoise"></i>
+                        <span>Cotizar Proyecto</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden p-2.5 rounded-xl bg-darksurface border border-neoncyan/20 text-neoncyan hover:bg-neoncyan/10">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#080D19] border-b border-neoncyan/20 px-4 pt-3 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2.5 px-3 rounded-lg text-silvertext hover:text-white hover:bg-white/5 font-medium">Servicios</a>
+            <a href="#stack" class="block py-2.5 px-3 rounded-lg text-silvertext hover:text-white hover:bg-white/5 font-medium">Stack Tecnológico</a>
+            <a href="#soluciones" class="block py-2.5 px-3 rounded-lg text-silvertext hover:text-white hover:bg-white/5 font-medium">Ventajas Competitivas</a>
+            <a href="#contacto" class="block py-2.5 px-3 rounded-lg text-silvertext hover:text-white hover:bg-white/5 font-medium">Contacto Directo</a>
+            <a href="#contacto" class="block text-center btn-neon-primary text-white font-semibold py-3 rounded-xl mt-2">
+                Cotizar Proyecto Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== 2. SECCIÓN HERO DE ALTO IMPACTO ==================== -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Banner superior preparado para mostrar logo.png / Logo.jpeg del usuario con fallback automático -->
+            <div class="mb-10 flex justify-center lg:justify-start">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0D162B] border border-neoncyan/30 shadow-[0_0_20px_rgba(0,212,255,0.12)]">
+                    <span class="w-2.5 h-2.5 rounded-full bg-neonturquoise animate-ping"></span>
+                    <span class="text-xs sm:text-sm font-medium text-silvertext">Disponible para nuevos proyectos y consultoría de software</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Columna Izquierda: Propuesta de Valor -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.12] tracking-tight mb-6">
+                        Transformo tus ideas en <span class="text-gradient-neon">software rápido, seguro y escalable</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-silvertext leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Soy <strong class="text-white">devdarksoft</strong>, Arquitecto de Software y Desarrollador Full-Stack. Diseño sistemas empresariales de misión crítica, APIs de ultra bajo tiempo de respuesta en <span class="text-neoncyan font-semibold">.NET Core &amp; SQL Server</span>, y aplicaciones multiplataforma modernas con <span class="text-neonturquoise font-semibold">Vue 3 &amp; Quasar</span>.
+                    </p>
+
+                    <!-- Botones de Acción Directa -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="https://wa.me/523531118411?text=Hola%20devdarksoft,%20vi%20tu%20portafolio%20y%20me%20interesa%20cotizar%20un%20proyecto%20de%20software." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-[#0066FF] via-[#00A3FF] to-[#00D4FF] hover:brightness-110 shadow-[0_0_25px_rgba(0,212,255,0.4)] transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Hablar por WhatsApp</span>
+                        </a>
+                        
+                        <a href="#contacto" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-semibold text-white bg-darksurface border border-neoncyan/35 hover:border-neonturquoise hover:bg-neoncyan/10 transition-all">
+                            <i class="fa-solid fa-paper-plane text-neoncyan"></i>
+                            <span>Solicitar Cotización</span>
+                        </a>
+                    </div>
+
+                    <!-- Métricas y Garantías Rápidas -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-display font-bold text-2xl sm:text-3xl text-white">100<span class="text-neoncyan">%</span></p>
+                            <p class="text-xs sm:text-sm text-silvertext">Código a Medida</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-bold text-2xl sm:text-3xl text-white">Multi<span class="text-neonturquoise">OS</span></p>
+                            <p class="text-xs sm:text-sm text-silvertext">Web, Móvil y PC</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-bold text-2xl sm:text-3xl text-white">Alta<span class="text-electricblue">+</span></p>
+                            <p class="text-xs sm:text-sm text-silvertext">Velocidad API</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Visualizador de Marca (Logo) & Terminal de Arquitectura -->
+                <div class="lg:col-span-5 space-y-6 animate-float">
+                    
+                    <!-- Contenedor Destacado para el Logotipo Oficial de devdarksoft -->
+                    <div class="glass-card rounded-2xl p-4 sm:p-5 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-electricblue/15 via-transparent to-neonturquoise/15 opacity-70"></div>
+                        <div class="relative rounded-xl overflow-hidden bg-[#03060C] border border-neoncyan/25 flex items-center justify-center min-h-[170px]">
+                            <!-- Imagen preparada para logo.png / Logo.jpeg en el repositorio de GitHub Pages -->
+                            <img src="assets/devdarksft-logo.png" 
+                                 alt="Logotipo oficial devdarksoft - Dragón Neón" 
+                                 class="w-full h-auto max-h-56 object-contain relative z-10"
+                                 onerror="this.style.display='none'; document.getElementById('logo-fallback-banner').classList.remove('hidden');">
+                            
+                            <!-- Fallback SVG Neón de Alta Calidad (se muestra automáticamente si aún no subes logo.png) -->
+                            <div id="logo-fallback-banner" class="hidden w-full py-7 px-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#060D1F] to-[#03060C]">
+                                <svg class="w-24 h-20 mb-2 drop-shadow-[0_0_16px_rgba(0,212,255,0.75)]" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="wingLeft" x1="0" y1="20" x2="60" y2="70" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#0066FF"/>
+                                            <stop offset="100%" stop-color="#00D4FF"/>
+                                        </linearGradient>
+                                        <linearGradient id="wingRight" x1="60" y1="20" x2="120" y2="70" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#00D4FF"/>
+                                            <stop offset="100%" stop-color="#00FFD1"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Ala izquierda -->
+                                    <path d="M54 45C38 22 16 18 4 28C16 32 22 40 24 52C32 45 42 44 54 45Z" fill="url(#wingLeft)"/>
+                                    <!-- Ala derecha -->
+                                    <path d="M66 45C82 22 104 18 116 28C104 32 98 40 96 52C88 45 78 44 66 45Z" fill="url(#wingRight)"/>
+                                    <!-- Cabeza y cuello del dragón -->
+                                    <path d="M60 12L52 26L56 48L60 66L64 48L68 26L60 12Z" fill="#0B152C" stroke="#00FFD1" stroke-width="2"/>
+                                    <path d="M55 18L46 8L53 23M65 18L74 8L67 23" stroke="#00D4FF" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="57" cy="26" r="1.8" fill="#00FFD1"/>
+                                    <circle cx="63" cy="26" r="1.8" fill="#00FFD1"/>
+                                </svg>
+                                <span class="font-display font-bold text-3xl tracking-wider text-gradient-neon drop-shadow-[0_0_12px_rgba(0,212,255,0.45)]">
+                                    devdarksoft
+                                </span>
+                                <span class="text-[11px] font-mono text-silvertext/70 mt-1">HIGH-PERFORMANCE SOFTWARE ENGINEERING</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Interactiva de Arquitectura Backend -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-electricblue/30 shadow-2xl">
+                        <div class="bg-[#070B14] px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
+                                <span class="ml-2 text-xs font-mono text-silvertext">DarkSoftCore.Api // .NET + Dapper</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-neonturquoise bg-neonturquoise/10 px-2 py-0.5 rounded">14ms latency</span>
+                        </div>
+                        <div class="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto bg-[#060913]/90">
+                            <p class="text-slate-500">// Arquitectura limpia y consultas SQL ultra rápidas</p>
+                            <p><span class="text-electricblue font-semibold">public async</span> Task&lt;Result&lt;OrderDto&gt;&gt; <span class="text-neoncyan">ProcessTransaction</span>(<span class="text-neonturquoise">TxRequest</span> req)</p>
+                            <p>{</p>
+                            <p class="pl-4"><span class="text-electricblue">using var</span> db = _sqlFactory.<span class="text-neoncyan">CreateConnection</span>();</p>
+                            <p class="pl-4"><span class="text-electricblue">var</span> data = <span class="text-electricblue">await</span> db.<span class="text-neonturquoise">QuerySingleAsync</span>&lt;OrderDto&gt;(</p>
+                            <p class="pl-8 text-amber-300">"EXEC sp_RegistrarOperacionFinanciera @Id, @Monto"</p>
+                            <p class="pl-4">);</p>
+                            <p class="pl-4"><span class="text-electricblue">return</span> Result.<span class="text-neonturquoise">Success</span>(data, <span class="text-emerald-400">"200 OK - Auditado"</span>);</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. SECCIÓN DE SERVICIOS ESPECIALIZADOS ==================== -->
+    <section id="servicios" class="py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-[0.25em] text-neonturquoise block mb-3">Soluciones Tecnológicas</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+                    Servicios diseñados para <span class="text-gradient-blue">impulsar tu negocio</span>
+                </h2>
+                <p class="text-silvertext text-base sm:text-lg">
+                    Desarrollo integral desde la arquitectura de base de datos hasta interfaces modernas en cualquier dispositivo, garantizando seguridad, velocidad y cero fricción.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="glass-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electricblue/25 to-neoncyan/20 border border-neoncyan/30 flex items-center justify-center text-neoncyan text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-neoncyan transition-colors">
+                            Desarrollo Web &amp; Apps Multiplataforma
+                        </h3>
+                        <p class="text-silvertext text-sm sm:text-base leading-relaxed mb-6">
+                            Aplicaciones empresariales modernas construidas con <strong class="text-white">Vue 3 y Quasar Framework</strong>. Con una sola base de código optimizada despliego tu sistema en <strong class="text-neonturquoise">Web (SPA/PWA), Android, iOS y Escritorio</strong>, reduciendo tiempos y costos de mantenimiento.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neoncyan/10 text-neoncyan">Vue.js 3</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-electricblue/15 text-blue-300">Quasar Framework</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neonturquoise/10 text-neonturquoise">PWA / Mobile / Desktop</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="glass-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electricblue/25 to-neoncyan/20 border border-neoncyan/30 flex items-center justify-center text-neonturquoise text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-neonturquoise transition-colors">
+                            Arquitectura Backend &amp; APIs de Alto Rendimiento
+                        </h3>
+                        <p class="text-silvertext text-sm sm:text-base leading-relaxed mb-6">
+                            Ingeniería de APIs RESTful robustas y seguras en <strong class="text-white">C# y ASP.NET Core</strong> utilizando <strong class="text-neoncyan">Dapper</strong> y serialización JSON optimizada. Preparadas para soportar alto tráfico, autenticación avanzada y microservicios escalables.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-electricblue/15 text-blue-300">C# / .NET Core</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neoncyan/10 text-neoncyan">Dapper Micro-ORM</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neonturquoise/10 text-neonturquoise">REST APIs &amp; JWT</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="glass-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electricblue/25 to-neoncyan/20 border border-neoncyan/30 flex items-center justify-center text-electricblue text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-neoncyan transition-colors">
+                            Bases de Datos &amp; Sistemas Administrativos
+                        </h3>
+                        <p class="text-silvertext text-sm sm:text-base leading-relaxed mb-6">
+                            Modelado relacional en <strong class="text-white">SQL Server</strong> con integridad transaccional exacta para control de inventarios, facturación, contabilidad y puntos de venta. Además, realizo <strong class="text-neonturquoise">migración y modernización de sistemas legacy VB.NET</strong> hacia plataformas web actuales.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neoncyan/10 text-neoncyan">SQL Server</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-electricblue/15 text-blue-300">Migración VB.NET</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neonturquoise/10 text-neonturquoise">ERP / Finanzas</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="glass-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-electricblue/25 to-neoncyan/20 border border-neoncyan/30 flex items-center justify-center text-neoncyan text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-3 group-hover:text-neonturquoise transition-colors">
+                            Integración de IA &amp; Automatización Empresarial
+                        </h3>
+                        <p class="text-silvertext text-sm sm:text-base leading-relaxed mb-6">
+                            Potencio tus procesos operativos conectando modelos de Inteligencia Artificial (<strong class="text-white">Google Gemini API</strong>), asistentes inteligentes, bots de atención y flujos automatizados en entornos <strong class="text-neoncyan">Windows Server</strong> con auditoría y máxima seguridad.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neonturquoise/10 text-neonturquoise">Google Gemini AI</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-electricblue/15 text-blue-300">Windows Server</span>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-neoncyan/10 text-neoncyan">Automatización</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. STACK TECNOLÓGICO INTERACTIVO ==================== -->
+    <section id="stack" class="py-20 bg-[#070B16]/80 border-y border-neoncyan/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-neoncyan block mb-2">Herramientas &amp; Arquitectura</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">
+                        Stack Tecnológico <span class="text-gradient-neon">Probado en Producción</span>
+                    </h2>
+                </div>
+
+                <!-- Filtros Interactivos de Stack -->
+                <div class="flex flex-wrap gap-2" id="stack-filters">
+                    <button data-filter="all" class="stack-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-electricblue text-white border border-neoncyan/50 transition-all">
+                        Todo el Stack
+                    </button>
+                    <button data-filter="backend" class="stack-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-darksurface text-silvertext border border-white/10 hover:border-neoncyan/40 transition-all">
+                        Backend &amp; APIs
+                    </button>
+                    <button data-filter="frontend" class="stack-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-darksurface text-silvertext border border-white/10 hover:border-neoncyan/40 transition-all">
+                        Frontend &amp; Apps
+                    </button>
+                    <button data-filter="data" class="stack-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-darksurface text-silvertext border border-white/10 hover:border-neoncyan/40 transition-all">
+                        Datos &amp; Cloud
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Tecnologías -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="stack-grid">
+                
+                <!-- Backend -->
+                <div data-category="backend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-electricblue/20 flex items-center justify-center text-neoncyan font-display font-bold text-lg">C#</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">C# / .NET Core</h4>
+                        <p class="text-xs text-silvertext">ASP.NET Core Web API</p>
+                    </div>
+                </div>
+
+                <div data-category="backend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neoncyan/15 flex items-center justify-center text-neonturquoise text-lg"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Dapper ORM</h4>
+                        <p class="text-xs text-silvertext">Consultas de Ultra Velocidad</p>
+                    </div>
+                </div>
+
+                <div data-category="backend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-electricblue/20 flex items-center justify-center text-blue-400 font-mono font-bold text-sm">VB</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">VB.NET</h4>
+                        <p class="text-xs text-silvertext">Mantenimiento &amp; Migración</p>
+                    </div>
+                </div>
+
+                <div data-category="backend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neonturquoise/15 flex items-center justify-center text-neonturquoise text-lg"><i class="fa-solid fa-code-branch"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">APIs RESTful</h4>
+                        <p class="text-xs text-silvertext">JSON &amp; Seguridad JWT</p>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div data-category="frontend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-emerald-500/15 flex items-center justify-center text-neonturquoise text-xl"><i class="fa-brands fa-vuejs"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Vue.js 3</h4>
+                        <p class="text-xs text-silvertext">Composition API Reactiva</p>
+                    </div>
+                </div>
+
+                <div data-category="frontend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neoncyan/15 flex items-center justify-center text-neoncyan text-lg"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Quasar Framework</h4>
+                        <p class="text-xs text-silvertext">Web, Android, iOS &amp; Desktop</p>
+                    </div>
+                </div>
+
+                <div data-category="frontend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-electricblue/20 flex items-center justify-center text-blue-300 font-mono font-bold text-sm">TS</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">TypeScript / JS</h4>
+                        <p class="text-xs text-silvertext">Código Tipado y Escalable</p>
+                    </div>
+                </div>
+
+                <div data-category="frontend" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neoncyan/15 flex items-center justify-center text-neoncyan text-lg"><i class="fa-brands fa-html5"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">HTML5 &amp; CSS3</h4>
+                        <p class="text-xs text-silvertext">Diseño UI/UX Responsivo</p>
+                    </div>
+                </div>
+
+                <!-- Datos & Infraestructura -->
+                <div data-category="data" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-electricblue/20 flex items-center justify-center text-neoncyan text-lg"><i class="fa-solid fa-database"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">SQL Server</h4>
+                        <p class="text-xs text-silvertext">Stored Procedures &amp; Tuning</p>
+                    </div>
+                </div>
+
+                <div data-category="data" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neoncyan/15 flex items-center justify-center text-blue-300 text-lg"><i class="fa-brands fa-windows"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Windows Server</h4>
+                        <p class="text-xs text-silvertext">IIS, Despliegue y Auditoría</p>
+                    </div>
+                </div>
+
+                <div data-category="data" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-neonturquoise/15 flex items-center justify-center text-neonturquoise text-lg"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Google Gemini IA</h4>
+                        <p class="text-xs text-silvertext">Integración Inteligente</p>
+                    </div>
+                </div>
+
+                <div data-category="data" class="stack-item glass-card p-5 rounded-xl flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-white text-lg"><i class="fa-brands fa-github"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm sm:text-base">Git &amp; CI/CD</h4>
+                        <p class="text-xs text-silvertext">Control de Versiones Seguro</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. VENTAJAS COMPETITIVAS / POR QUÉ CONTRATARME ==================== -->
+    <section id="soluciones" class="py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-neoncyan/25 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-72 h-72 bg-electricblue/20 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-1">
+                        <span class="text-xs font-mono uppercase tracking-[0.22em] text-neonturquoise block mb-2">Compromiso Técnico</span>
+                        <h2 class="font-display font-bold text-3xl text-white mb-4">
+                            ¿Por qué desarrollar tu proyecto con <span class="text-neoncyan">devdarksoft</span>?
+                        </h2>
+                        <p class="text-silvertext text-sm leading-relaxed">
+                            Evita sistemas lentos o soluciones genéricas que limitan el crecimiento de tu empresa. Construyo arquitectura sólida pensada para durar.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-[#070C18]/90 p-5 rounded-2xl border border-white/5">
+                            <div class="text-neoncyan text-xl mb-2"><i class="fa-solid fa-gauge-high"></i></div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">Rendimiento Extremo</h3>
+                            <p class="text-xs sm:text-sm text-silvertext">Optimización profunda de consultas SQL y micro-ORMs para respuestas en milisegundos incluso con miles de registros.</p>
+                        </div>
+
+                        <div class="bg-[#070C18]/90 p-5 rounded-2xl border border-white/5">
+                            <div class="text-neonturquoise text-xl mb-2"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">Integridad Financiera y Datos</h3>
+                            <p class="text-xs sm:text-sm text-silvertext">Control estricto de transacciones, bitácoras de auditoría y respaldos seguros para operaciones contables y comerciales.</p>
+                        </div>
+
+                        <div class="bg-[#070C18]/90 p-5 rounded-2xl border border-white/5">
+                            <div class="text-electricblue text-xl mb-2"><i class="fa-solid fa-devices"></i></div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">Un Desarrollo, Todas las Pantallas</h3>
+                            <p class="text-xs sm:text-sm text-silvertext">Tu equipo podrá operar desde computadoras de oficina, tablets o teléfonos móviles con una interfaz fluida y moderna.</p>
+                        </div>
+
+                        <div class="bg-[#070C18]/90 p-5 rounded-2xl border border-white/5">
+                            <div class="text-neoncyan text-xl mb-2"><i class="fa-solid fa-handshake"></i></div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">Trato Directo Sin Intermediarios</h3>
+                            <p class="text-xs sm:text-sm text-silvertext">Comunicación clara y transparente directamente con el arquitecto responsable de tu proyecto desde el día uno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. SECCIÓN DE CONTACTO Y COTIZACIÓN (ALTA CONVERSIÓN) ==================== -->
+    <section id="contacto" class="py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-mono uppercase tracking-[0.25em] text-neonturquoise block mb-3">Iniciemos tu Proyecto</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+                    ¿Listo para llevar tu software al <span class="text-gradient-neon">siguiente nivel</span>?
+                </h2>
+                <p class="text-silvertext text-base sm:text-lg">
+                    Contáctame directamente por WhatsApp, correo electrónico o envía los detalles de tu idea mediante el formulario para recibir una propuesta personalizada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                
+                <!-- Tarjetas de Contacto Directo (5 columnas) -->
+                <div class="lg:col-span-5 space-y-5">
+                    
+                    <!-- WhatsApp Directo -->
+                    <a href="https://wa.me/523531118411?text=Hola%20devdarksoft,%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto%20de%20desarrollo%20de%20software." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="glass-card p-6 rounded-2xl flex items-center gap-4 group block border-neonturquoise/30 hover:border-neonturquoise">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-xs font-mono text-neonturquoise uppercase tracking-wider">Respuesta Rápida</span>
+                            <h3 class="font-display font-bold text-lg text-white">WhatsApp Directo</h3>
+                            <p class="text-silvertext text-sm font-mono">+52 353 111 8411</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-silvertext group-hover:text-neonturquoise transition-colors"></i>
+                    </a>
+
+                    <!-- Correo Electrónico con botón de copiar -->
+                    <div class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 min-w-0">
+                            <div class="w-14 h-14 rounded-2xl bg-neoncyan/15 border border-neoncyan/30 flex items-center justify-center text-neoncyan text-2xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <span class="text-xs font-mono text-neoncyan uppercase tracking-wider">Correo Profesional</span>
+                                <h3 class="font-display font-bold text-lg text-white truncate">devdarksoft@gmail.com</h3>
+                                <a href="mailto:devdarksoft@gmail.com?subject=Cotizaci%C3%B3n%20de%20Proyecto%20-%20devdarksoft" class="text-xs text-silvertext hover:text-neonturquoise underline">
+                                    Abrir cliente de correo
+                                </a>
+                            </div>
+                        </div>
+                        <button type="button" id="copy-email-btn"
+                                class="px-4 py-2.5 rounded-xl bg-darksurface border border-neoncyan/30 hover:border-neonturquoise text-xs font-semibold text-white flex items-center justify-center gap-2 shrink-0 transition-all active:scale-95">
+                            <i class="fa-regular fa-copy text-neoncyan"></i>
+                            <span>Copiar</span>
+                        </button>
+                    </div>
+
+                    <!-- Perfil GitHub -->
+                    <a href="https://github.com/devdarksoft" target="_blank" rel="noopener noreferrer"
+                       class="glass-card p-6 rounded-2xl flex items-center gap-4 group block">
+                        <div class="w-14 h-14 rounded-2xl bg-electricblue/20 border border-electricblue/40 flex items-center justify-center text-white text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-xs font-mono text-blue-300 uppercase tracking-wider">Código &amp; Repositorios</span>
+                            <h3 class="font-display font-bold text-lg text-white">github.com/devdarksoft</h3>
+                            <p class="text-silvertext text-xs">Explora mis contribuciones y proyectos</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-silvertext group-hover:text-neoncyan transition-colors"></i>
+                    </a>
+
+                </div>
+
+                <!-- Formulario Interactivo sin Backend (7 columnas) -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="glass-card p-7 sm:p-9 rounded-3xl border border-neoncyan/25 space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-2">
+                            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Cuéntame sobre tu proyecto</h3>
+                            <span class="text-xs font-mono text-neonturquoise bg-neonturquoise/10 px-3 py-1 rounded-full">Sin compromiso</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="client-name" class="block text-xs font-semibold uppercase tracking-wider text-silvertext mb-2">Tu Nombre *</label>
+                                <input type="text" id="client-name" required placeholder="Ej. Carlos Mendoza"
+                                       class="w-full px-4 py-3.5 rounded-xl bg-[#060A14] border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-neoncyan transition-colors">
+                            </div>
+                            <div>
+                                <label for="client-company" class="block text-xs font-semibold uppercase tracking-wider text-silvertext mb-2">Empresa o Negocio</label>
+                                <input type="text" id="client-company" placeholder="Ej. Distribuidora del Norte"
+                                       class="w-full px-4 py-3.5 rounded-xl bg-[#060A14] border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-neoncyan transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-silvertext mb-2">Tipo de Solución *</label>
+                            <select id="project-type" required
+                                    class="w-full px-4 py-3.5 rounded-xl bg-[#060A14] border border-white/15 text-white focus:outline-none focus:border-neoncyan transition-colors">
+                                <option value="Aplicación Web o Multiplataforma (Vue 3 / Quasar)">Aplicación Web o Multiplataforma (Vue 3 / Quasar)</option>
+                                <option value="Sistema Administrativo / Inventarios / Facturación (SQL Server)">Sistema Administrativo / Inventarios / Facturación (SQL Server)</option>
+                                <option value="Backend & API RESTful de Alto Rendimiento (.NET Core)">Backend &amp; API RESTful de Alto Rendimiento (.NET Core)</option>
+                                <option value="Migración o Modernización de Sistema VB.NET">Migración o Modernización de Sistema VB.NET</option>
+                                <option value="Integración de Inteligencia Artificial / Automatización">Integración de Inteligencia Artificial / Automatización</option>
+                                <option value="Consultoría Técnica u Otro Proyecto">Consultoría Técnica u Otro Proyecto</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="client-message" class="block text-xs font-semibold uppercase tracking-wider text-silvertext mb-2">Detalles del Proyecto *</label>
+                            <textarea id="client-message" rows="4" required placeholder="Describe brevemente qué necesitas automatizar, construir o mejorar..."
+                                      class="w-full px-4 py-3.5 rounded-xl bg-[#060A14] border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-neoncyan transition-colors resize-none"></textarea>
+                        </div>
+
+                        <!-- Botones de Envío Dual (WhatsApp o Email) -->
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <button type="submit" data-channel="whatsapp"
+                                    class="flex-1 btn-neon-primary text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2.5 cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xl text-neonturquoise"></i>
+                                <span>Enviar Cotización por WhatsApp</span>
+                            </button>
+                            <button type="button" id="send-email-form-btn"
+                                    class="sm:w-auto bg-darksurface hover:bg-white/10 text-white font-semibold py-4 px-6 rounded-xl border border-neoncyan/35 hover:border-neoncyan flex items-center justify-center gap-2 transition-all cursor-pointer">
+                                <i class="fa-solid fa-envelope text-neoncyan"></i>
+                                <span>Enviar por Correo</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. FOOTER PROFESIONAL ==================== -->
+    <footer class="bg-[#03050A] border-t border-neoncyan/15 pt-14 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
+                
+                <!-- Identidad Footer -->
+                <div class="text-center md:text-left">
+                    <a href="#inicio" class="inline-flex items-center gap-2.5 mb-2">
+                        <span class="font-display font-bold text-2xl text-white">
+                            dev<span class="text-gradient-blue">darksoft</span>
+                        </span>
+                    </a>
+                    <p class="text-silvertext text-sm max-w-md">
+                        Arquitectura de Software, Desarrollo Full-Stack (.NET Core, Vue 3, Quasar, SQL Server) y Soluciones Empresariales a Medida.
+                    </p>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-silvertext">
+                    <a href="#inicio" class="hover:text-neoncyan transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-neoncyan transition-colors">Servicios</a>
+                    <a href="#stack" class="hover:text-neoncyan transition-colors">Stack</a>
+                    <a href="#contacto" class="hover:text-neoncyan transition-colors">Contacto</a>
+                </div>
+
+                <!-- Redes y Contacto Directo -->
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com/devdarksoft" target="_blank" rel="noopener noreferrer" aria-label="GitHub devdarksoft"
+                       class="w-11 h-11 rounded-xl bg-darksurface border border-white/10 hover:border-neoncyan text-silvertext hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://wa.me/523531118411" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp devdarksoft"
+                       class="w-11 h-11 rounded-xl bg-darksurface border border-white/10 hover:border-neonturquoise text-silvertext hover:text-neonturquoise flex items-center justify-center transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="mailto:devdarksoft@gmail.com" aria-label="Email devdarksoft"
+                       class="w-11 h-11 rounded-xl bg-darksurface border border-white/10 hover:border-neoncyan text-silvertext hover:text-neoncyan flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-silvertext/70">
+                <p>&copy; <span id="current-year">2026</span> <strong class="text-white">devdarksoft</strong>. Todos los derechos reservados.</p>
+                <p class="font-mono">Tel: +52 353 111 8411 &bull; devdarksoft@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS INTERACTIVOS ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Actualizar año dinámico
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Menú Móvil Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Cerrar menú móvil al hacer clic en un enlace
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Sistema de Notificación Toast
+            let toastTimeout;
+            function showToast(title, message) {
+                const toast = document.getElementById('toast-notification');
+                document.getElementById('toast-title').textContent = title;
+                document.getElementById('toast-message').textContent = message;
+                
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 3800);
+            }
+
+            // Copiar correo al portapapeles (compatible con iframes y navegadores modernos)
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            copyEmailBtn.addEventListener('click', () => {
+                const emailText = 'devdarksoft@gmail.com';
+                const tempInput = document.createElement('input');
+                tempInput.value = emailText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    showToast('¡Correo copiado!', 'devdarksoft@gmail.com está listo en tu portapapeles.');
+                } catch (err) {
+                    showToast('Correo de contacto', 'devdarksoft@gmail.com');
+                }
+                document.body.removeChild(tempInput);
+            });
+
+            // Filtro Interactivo del Stack Tecnológico
+            const filterBtns = document.querySelectorAll('.stack-filter-btn');
+            const stackItems = document.querySelectorAll('.stack-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Actualizar estilos de botones activos
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-electricblue', 'text-white', 'border-neoncyan/50');
+                        b.classList.add('bg-darksurface', 'text-silvertext', 'border-white/10');
+                    });
+                    btn.classList.remove('bg-darksurface', 'text-silvertext', 'border-white/10');
+                    btn.classList.add('bg-electricblue', 'text-white', 'border-neoncyan/50');
+
+                    const filter = btn.getAttribute('data-filter');
+                    stackItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Manejo de Formulario de Contacto (WhatsApp & Email)
+            const contactForm = document.getElementById('contact-form');
+            const sendEmailFormBtn = document.getElementById('send-email-form-btn');
+
+            function getFormData() {
+                const name = document.getElementById('client-name').value.trim();
+                const company = document.getElementById('client-company').value.trim();
+                const type = document.getElementById('project-type').value;
+                const message = document.getElementById('client-message').value.trim();
+                return { name, company, type, message };
+            }
+
+            // Envío por WhatsApp (Submit principal)
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const { name, company, type, message } = getFormData();
+                
+                const companyText = company ? ` (${company})` : '';
+                const whatsappText = `Hola *devdarksoft*, soy *${name}*${companyText}.\n\n` +
+                                     `*Tipo de solución:* ${type}\n` +
+                                     `*Detalles del proyecto:* ${message}\n\n` +
+                                     `Me gustaría recibir información para cotizar este desarrollo.`;
+
+                const url = `https://wa.me/523531118411?text=${encodeURIComponent(whatsappText)}`;
+                showToast('Abriendo WhatsApp...', 'Redirigiendo tu consulta con devdarksoft.');
+                window.open(url, '_blank', 'noopener,noreferrer');
+            });
+
+            // Envío alternativo por Correo Electrónico
+            sendEmailFormBtn.addEventListener('click', () => {
+                const { name, company, type, message } = getFormData();
+                if (!name || !message) {
+                    showToast('Campos requeridos', 'Por favor ingresa tu nombre y los detalles de tu proyecto.');
+                    return;
+                }
+
+                const companyText = company ? ` - ${company}` : '';
+                const subject = `Cotización de Proyecto: ${type} (${name}${companyText})`;
+                const body = `Hola devdarksoft,\n\n` +
+                             `Nombre: ${name}\n` +
+                             `Empresa/Negocio: ${company || 'No especificada'}\n` +
+                             `Solución requerida: ${type}\n\n` +
+                             `Detalles del proyecto:\n${message}\n\n` +
+                             `Quedo atento a tu respuesta.`;
+
+                const mailtoUrl = `mailto:devdarksoft@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                showToast('Abriendo cliente de correo...', 'Preparando mensaje para devdarksoft@gmail.com');
+                window.location.href = mailtoUrl;
+            });
+        });
+    </script>
 </body>
 </html>
